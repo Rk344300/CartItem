@@ -1,44 +1,15 @@
 import React from 'react';
 
-class CartItem extends React.Component{
-    
-    //  increaseQuantity =() =>{
-    // //     //console.log('this',this.state);
+const CartItem = (props) =>{
 
-    // //      //setState form-1
-    // //     //  this.setState({
-    // //     //    qty : this.state.qty + 1
-    // //     //  })
-
-    //     //setState form-2
-    //      this.setState((prevState) => {
-    //         return{
-    //             qty : prevState.qty + 1
-    //         }
-    //      })
-    // }
-
-    // decreaseQuanitity =() =>{
-    //     this.setState((prevState) =>{
-    //         return {
-    //            qty : (prevState.qty != 0)? prevState.qty -1 : 0 
-    //         }
-    //     })
-    // }
-
-
-
-
-    render(){
-        console.log('this.props' ,this.props);
-        const { price,title,qty } = this.props.product;
-        const {product,onInceaseQuantity,onDecreaseQuantity,onDelete} = this.props;
+        const { price,title,qty } = props.product;
+        const {product,onInceaseQuantity,onDecreaseQuantity,onDelete} = props;
 
 
         return(
             <div className="cart-item">
                 <div className="left-block">
-                   <img style={styles.image} />
+                   <img style={styles.image} src={product.img} />
 
                 </div>
                 <div className="right-block">
@@ -73,7 +44,7 @@ class CartItem extends React.Component{
                 </div>
             </div>
         );
-    }
+    
 }
 
 const styles = {
